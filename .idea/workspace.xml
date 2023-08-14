@@ -4,8 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a4fdcc56-3abf-42e8-b84b-18480af85e91" name="Changes" comment="New Commit">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="a4fdcc56-3abf-42e8-b84b-18480af85e91" name="Changes" comment="Commit2">
+      <change afterPath="$PROJECT_DIR$/clone/client/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clone/client/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clone/client/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clone/client/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clone/client/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clone/client/public/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clone/client/public/logo192.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clone/client/public/logo512.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clone/client/public/manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clone/client/public/robots.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clone/client/src/App.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clone/client/src/Components/Header.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clone/client/src/Components/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clone/client/src/Containers/HomeContainer.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clone/client/src/Containers/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clone/client/src/asset/Img/waves.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clone/client/src/asset/css/CasCadingStyle.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clone/client/src/asset/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clone/client/src/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clone/client/src/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clone/client/tailwind.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +36,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="CSS File" />
         <option value="JavaScript File" />
       </list>
     </option>
@@ -50,11 +72,13 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "https/github.com/siddharth007-singh/Pixabay__Clone.git",
+    "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -67,7 +91,7 @@
       <option name="presentableId" value="Default" />
       <updated>1691932406519</updated>
       <workItem from="1691932407506" duration="5145000" />
-      <workItem from="1691988378600" duration="4195000" />
+      <workItem from="1691988378600" duration="13664000" />
     </task>
     <task id="LOCAL-00001" summary="New Commit">
       <option name="closed" value="true" />
@@ -77,7 +101,23 @@
       <option name="project" value="LOCAL" />
       <updated>1692001600298</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Commit">
+      <option name="closed" value="true" />
+      <created>1692002572782</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1692002572782</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Commit2">
+      <option name="closed" value="true" />
+      <created>1692002585080</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1692002585080</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -97,6 +137,8 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="New Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="New Commit" />
+    <MESSAGE value="Commit" />
+    <MESSAGE value="Commit2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit2" />
   </component>
 </project>
