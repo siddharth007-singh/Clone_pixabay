@@ -3,18 +3,63 @@ import {NavLink} from "react-router-dom";
 import {Logo} from "../asset";
 import {FcGoogle} from "react-icons/fc";
 
+const HeaderStyle = {
+    head:{
+        position: "fixed",
+        left:"20px",
+        right:"20px",
+        display:"flex",
+        alignItems: "center",
+        justifyContent: "space-between",
+        zIndex:50,
+        transitionProperty: "all",
+        transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)",
+        transitionDuration: "150ms",
+        transitionDuration: "300ms",
+    },
+
+    logo:{
+        width: "10rem",
+        height: "auto",
+        objectFit: "contain",
+        padding: "0.5rem",
+    },
+
+    beforeLogin:{
+
+    },
+
+    afterLogin:{
+        display:"flex",
+        alignItems:"center",
+        justifyContent:"center",
+        gap: "0.5rem",
+        borderWidth: "1px",
+        paddingLeft: "0.5rem",
+        paddingRight: "0.5rem",
+        paddingTop: "0.25rem",
+        paddingBottom: "0.25rem",
+        borderRadius: "0.375rem",
+        cursor: "pointer",
+        transitionProperty: "all",
+        // transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transitionDuration: "150ms",
+
+    },
+}
+
+
 const Header = () => {
     const [user, setUser] = useState(null);
     return(
-        <header className={`fixed inset-x-0 sm:px-12 lg:px-32 xl:px-44 py-4 flex items-center justify-between z-50 transition-all 
-        duration-300`}
+        <header style={HeaderStyle.head}
         >
             {/*Logo Section*/}
             <NavLink to={"/"}>
                 <img
                     src={Logo}
                     alt="Main Logo "
-                    className="w-24 h-auto object-contain p-2"
+                    style={HeaderStyle.logo}
                 />
             </NavLink>
             {/*UserProfile Section */}
@@ -30,9 +75,7 @@ const Header = () => {
                 </>
             ):(
                 <>
-                    <div className={`flex items-center justify-center gap-2 border
-                     border-e-gray-300 px-2 py-1 rounded-md backdrop-blur-md cursor-pointer hover:shadow-md active:scale-95 transition-all
-                     ease-in-out duration-150`}>
+                    <div style={HeaderStyle.afterLogin}>
                         <FcGoogle/>
                         <p>Login</p>
                     </div>

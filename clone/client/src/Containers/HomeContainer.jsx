@@ -1,7 +1,13 @@
 import React from 'react';
 
+const HomeContainerStyle={
+  // width: "100%",
+  // height: "5000px",
+  // backgroundColor: "Yellow",
+}
+
 const HomeContainer = () => {
-  return <div className="w-full h-[5000px] bg-red-200">HomeContainer</div>
+  return <div style={HomeContainerStyle}>HomeContainer</div>
 }
 
 export default HomeContainer;
