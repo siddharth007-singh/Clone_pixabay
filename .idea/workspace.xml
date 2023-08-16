@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a4fdcc56-3abf-42e8-b84b-18480af85e91" name="Changes" comment="15Aug Commit4">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Containers/HomeContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Containers/HomeContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/asset/Img/Log.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/asset/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/asset/index.js" afterDir="false" />
+    <list default="true" id="a4fdcc56-3abf-42e8-b84b-18480af85e91" name="Changes" comment="16Aug Commit">
+      <change afterPath="$PROJECT_DIR$/client/src/asset/Img/Banner.jpg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +73,7 @@
       <workItem from="1691988378600" duration="13664000" />
       <workItem from="1692039541705" duration="177000" />
       <workItem from="1692085699869" duration="3453000" />
-      <workItem from="1692105352082" duration="5326000" />
+      <workItem from="1692105352082" duration="5756000" />
     </task>
     <task id="LOCAL-00001" summary="New Commit">
       <option name="closed" value="true" />
@@ -136,7 +131,15 @@
       <option name="project" value="LOCAL" />
       <updated>1692105628056</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="16Aug Commit">
+      <option name="closed" value="true" />
+      <created>1692167029767</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1692167029767</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -162,6 +165,7 @@
     <MESSAGE value="15Aug Commit2" />
     <MESSAGE value="15Aug Commit3" />
     <MESSAGE value="15Aug Commit4" />
-    <option name="LAST_COMMIT_MESSAGE" value="15Aug Commit4" />
+    <MESSAGE value="16Aug Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="16Aug Commit" />
   </component>
 </project>
