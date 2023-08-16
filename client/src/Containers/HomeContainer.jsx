@@ -1,23 +1,14 @@
 import React from 'react';
 import {BannerImage} from "../asset";
 
-const HomeContainerStyle={
-  width: "100%",
-
-  ImageDiv:{
-    width: "100vw",
-    height: "420px",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    position: "relative",
-  }
-}
+// const HomeContainerStyle={
+//
+// }
 
 const HomeContainer = () => {
-  return <div style={HomeContainerStyle}>
-    <div style={HomeContainerStyle.ImageDiv}>
-      <img src={BannerImage} className=""/>
+  return <div className="w-full">
+    <div className="w-screen h-420 flex items-center justify-center  relative">
+      {/*<img src={BannerImage} className="w-full h-full object-cover" alt=""/>*/}
     </div>
   </div>
 }

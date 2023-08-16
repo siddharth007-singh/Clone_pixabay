@@ -58,8 +58,25 @@ const HeaderStyle = {
 
 const Header = () => {
     const [user, setUser] = useState(null);
+    const[color, setColor] = useState(false);
+
+    const changeColor = ()=>{
+        if(typeof window!=="undefined"){
+            if(window.scrollY>=1){
+                setColor(true);
+            }
+            else{
+                setColor(false);
+            }
+        }
+    };
+
+    if(typeof window!=="undefined"){
+        window.addEventListener("scroll", changeColor);
+    }
+
     return(
-        <header style={HeaderStyle.head}
+        <header style={HeaderStyle.head} className={`${color?'bg-white': 'bg-transparent'}`}
         >
             {/*Logo Section*/}
             <NavLink to={"/"}>
