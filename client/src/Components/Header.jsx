@@ -132,13 +132,16 @@ const Header = () => {
             <div className="flex items-center justify-center" style={{gap:"1rem"}}>
                 {user?(
                     <>
-                        <div style={HeaderStyle.beforeLogin}>
+                        <div style={HeaderStyle.beforeLogin} >
                             <img
                                 src={user?.photoURL}
                                 style={HeaderStyle.beforeLogin.Img}
                                 alt=""
                                 referrerPolicy="no-referrer"
                             />
+                            <div className="absolute right-0 top-12 rounded-md shadow-md w-64 px-4 py-3 bg-[#191B26] flex flex-col items-center justify-center gap-3">
+                                <h2 className="text-gray-50 font-semibold">{user?.displayName}</h2>
+                            </div>
                         </div>
                     </>
                 ):(
