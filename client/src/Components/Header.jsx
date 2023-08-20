@@ -2,6 +2,9 @@ import React, {useState} from 'react';
 import {NavLink} from "react-router-dom";
 import {Log} from "../asset";
 import {FcGoogle} from "react-icons/fc";
+import {GoogleAuthProvider, signInWithRedirect} from "firebase/auth";
+import {firebaseAuth} from "../config/firebase.config";
+import {createNewUser} from "../sanity";
 
 const HeaderStyle = {
     head:{
@@ -60,6 +63,8 @@ const Header = () => {
     const [user, setUser] = useState(null);
     const[color, setColor] = useState(false);
 
+    const provider = new GoogleAuthProvider();
+
     const changeColor = ()=>{
         if(typeof window!=="undefined"){
             if(window.scrollY>=1){
@@ -74,6 +79,14 @@ const Header = () => {
     if(typeof window!=="undefined"){
         window.addEventListener("scroll", changeColor);
     }
+
+    const signWithGmail = async ()=>{
+        await signInWithRedirect(firebaseAuth, provider).then(result=>{
+            createNewUser(result?.user?.providerData[0]).then(()=>{
+                console.log('New User Created');
+            });
+        });
+    };
 
     return(
         <header style={HeaderStyle.head} className={`${color?'bg-white': 'bg-transparent'}`}
@@ -99,7 +112,7 @@ const Header = () => {
                 </>
             ):(
                 <>
-                    <div style={HeaderStyle.afterLogin}>
+                    <div style={HeaderStyle.afterLogin} onClick={signWithGmail}>
                         <FcGoogle/>
                         <p>Login</p>
                     </div>
