@@ -4,15 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a4fdcc56-3abf-42e8-b84b-18480af85e91" name="Changes" comment="16Aug Commit">
-      <change afterPath="$PROJECT_DIR$/client/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/config/firebase.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/sanity.js" afterDir="false" />
+    <list default="true" id="a4fdcc56-3abf-42e8-b84b-18480af85e91" name="Changes" comment="20Aug Commit1">
+      <change afterPath="$PROJECT_DIR$/client/src/context/actions/userActions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/context/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/context/reducers/userReducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/Components/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +35,9 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/client/src/Components/Header.jsx" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -81,7 +85,7 @@
       <workItem from="1692039541705" duration="177000" />
       <workItem from="1692085699869" duration="3453000" />
       <workItem from="1692105352082" duration="6854000" />
-      <workItem from="1692512469954" duration="5791000" />
+      <workItem from="1692512469954" duration="9788000" />
     </task>
     <task id="LOCAL-00001" summary="New Commit">
       <option name="closed" value="true" />
@@ -155,7 +159,15 @@
       <option name="project" value="LOCAL" />
       <updated>1692167087215</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="20Aug Commit1">
+      <option name="closed" value="true" />
+      <created>1692521239748</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1692521239748</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -182,6 +194,7 @@
     <MESSAGE value="15Aug Commit3" />
     <MESSAGE value="15Aug Commit4" />
     <MESSAGE value="16Aug Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="16Aug Commit" />
+    <MESSAGE value="20Aug Commit1" />
+    <option name="LAST_COMMIT_MESSAGE" value="20Aug Commit1" />
   </component>
 </project>

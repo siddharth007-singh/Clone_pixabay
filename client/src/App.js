@@ -4,8 +4,12 @@ import {Header} from "./Components";
 import {useEffect} from "react";
 import {firebaseAuth} from "./config/firebase.config";
 import {createNewUser} from "./sanity";
+import {useDispatch} from "react-redux";
+import {SET_USER} from "./context/actions/userActions";
 
 function App() {
+
+    const dispatch = useDispatch();
 
     useEffect(() => {
         firebaseAuth.onAuthStateChanged(result=>{
@@ -13,6 +17,7 @@ function App() {
                 console.log('User', result?.providerData[0]);
                 createNewUser(result?.providerData[0]).then(()=>{
                     console.log('New User Created');
+                    dispatch(SET_USER(result?.providerData[0]))
                 });
             }
         });

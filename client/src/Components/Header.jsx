@@ -5,6 +5,8 @@ import {FcGoogle} from "react-icons/fc";
 import {GoogleAuthProvider, signInWithRedirect} from "firebase/auth";
 import {firebaseAuth} from "../config/firebase.config";
 import {createNewUser} from "../sanity";
+import {SET_USER} from "../context/actions/userActions";
+import {useDispatch, useSelector} from "react-redux";
 
 const HeaderStyle = {
     head:{
@@ -60,8 +62,11 @@ const HeaderStyle = {
 
 
 const Header = () => {
-    const [user, setUser] = useState(null);
+    // const [user, setUser] = useState(null);
     const[color, setColor] = useState(false);
+    const user = useSelector((state)=>state.user);
+
+    const dispatch = useDispatch();
 
     const provider = new GoogleAuthProvider();
 
@@ -84,6 +89,7 @@ const Header = () => {
         await signInWithRedirect(firebaseAuth, provider).then(result=>{
             createNewUser(result?.user?.providerData[0]).then(()=>{
                 console.log('New User Created');
+                dispatch(SET_USER(result?.providerData[0]))
             });
         });
     };
@@ -104,9 +110,10 @@ const Header = () => {
                 <>
                     <div style={HeaderStyle.beforeLogin}>
                         <img
-                            src=""
+                            src={user?.photoURL}
                             style={HeaderStyle.beforeLogin.Img}
                             alt=""
+                            referrerPolicy="no-referrer"
                         />
                     </div>
                 </>
