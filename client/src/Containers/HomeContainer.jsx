@@ -6,9 +6,9 @@ import {BannerImage} from "../asset";
 // }
 
 const HomeContainer = () => {
-  return <div className="w-full">
-    <div className="w-screen h-420 flex items-center justify-center  relative">
-      {/*<img src={BannerImage} className="w-full h-full object-cover" alt=""/>*/}
+  return <div className="w-screen h-auto flex flex-col items-center justify-center relative">
+    <div className="w-screen h-420 flex items-center justify-center relative">
+      <img src={BannerImage} className="object-cover" alt="" style={{width:"1920px", height:"440px"}}/>
     </div>
   </div>
 }

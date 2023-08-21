@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {NavLink, useNavigate} from "react-router-dom";
-import {Log} from "../asset";
+import {Logo, Logo1} from "../asset";
 import {FcGoogle} from "react-icons/fc";
 import {GoogleAuthProvider, signInWithRedirect} from "firebase/auth";
 import {firebaseAuth} from "../config/firebase.config";
@@ -157,7 +157,7 @@ const Header = () => {
             {/*Logo Section*/}
             <NavLink to={"/"}>
                 <img
-                    src={Log}
+                    src={Logo}
                     alt="Main Logo "
                     style={HeaderStyle.logo}
                 />

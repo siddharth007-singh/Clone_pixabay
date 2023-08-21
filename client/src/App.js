@@ -1,5 +1,5 @@
 import {Route, Routes} from "react-router-dom";
-import {HomeContainer} from "./Containers";
+import {HomeContainer, NewPost} from "./Containers";
 import {Header, MainLoader} from "./Components";
 import {useEffect, useState} from "react";
 import {firebaseAuth} from "./config/firebase.config";
@@ -42,7 +42,8 @@ function App() {
                         <main className='w-full h-full flex items-center justify-center'>
                             {/*Routes*/}
                             <Routes>
-                                <Route path="/" element={<HomeContainer/>}/>
+                                <Route path="/*" element={<HomeContainer/>}/>
+                                <Route path="/newPost/*" element={<NewPost/>}/>
                             </Routes>
                         </main>
                     </>
