@@ -7,6 +7,7 @@ import {firebaseAuth} from "../config/firebase.config";
 import {createNewUser} from "../sanity";
 import {SET_USER} from "../context/actions/userActions";
 import {useDispatch, useSelector} from "react-redux";
+import {mainMenu} from "../utils/support";
 
 const Header = () => {
     const [isHover, setIsHover] = useState(false);
@@ -114,6 +115,30 @@ const Header = () => {
             backgroundColor: isHover? "rgb(110 231 183)" : "rgb(167 243 208)",
             // backgroundColor: "#00ab6b",
             opacity: 1,
+        },
+        userMenu:{
+            position: "absolute",
+            right: "0px",
+            top: "3rem",
+            borderRadius: "0.375rem",
+            // shadowColor:
+            width: "16rem",
+            opacity: 1,
+            display: "flex",
+            flexDirection:"column",
+            alignItems:"flex-start",
+            justifyContent:"center",
+            gap: "0.75rem",
+            paddingLeft: "1rem",
+            paddingRight: "1rem",
+            paddingTop: "0.75rem",
+            paddingBottom: "0.75rem",
+            backgroundColor: "rgb(25 27 38 )",
+            color: "rgb(249 250 251)",
+            fontWeight: 600
+        },
+        LogoutStyle:{
+
         }
     }
 
@@ -139,8 +164,17 @@ const Header = () => {
                                 alt=""
                                 referrerPolicy="no-referrer"
                             />
-                            <div className="absolute right-0 top-12 rounded-md shadow-md w-64 px-4 py-3 bg-[#191B26] flex flex-col items-center justify-center gap-3">
-                                <h2 className="text-gray-50 font-semibold">{user?.displayName}</h2>
+                            <div style={HeaderStyle.userMenu}>
+                                <h2>{user?.displayName}</h2>
+
+                                {mainMenu && mainMenu.map(menu=>(
+                                    <NavLink
+                                        to={`/newPost/${menu?.slug}`} key={menu?.id} style={{color:"rgb(249 250 251)"}}>
+                                        {menu?.name}
+                                    </NavLink>
+                                ))}
+                                <div className="w-full h-[1px] bg-grey-700"></div>
+                                <p className="text-xl text-grey-300" onClick={logOut}>Logout</p>
                             </div>
                         </div>
                     </>
