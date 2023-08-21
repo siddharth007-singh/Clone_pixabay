@@ -1,21 +1,22 @@
 import React, {useState} from 'react';
-import {NavLink} from "react-router-dom";
+import {NavLink, useNavigate} from "react-router-dom";
 import {Log} from "../asset";
 import {FcGoogle} from "react-icons/fc";
 import {GoogleAuthProvider, signInWithRedirect} from "firebase/auth";
 import {firebaseAuth} from "../config/firebase.config";
 import {createNewUser} from "../sanity";
-import {SET_USER} from "../context/actions/userActions";
+import {SET_USER, SET_USER_NULL} from "../context/actions/userActions";
 import {useDispatch, useSelector} from "react-redux";
 import {mainMenu} from "../utils/support";
 
 const Header = () => {
     const [isHover, setIsHover] = useState(false);
+    const[isMenu, setMenu] = useState(false);
     const[color, setColor] = useState(false);
     const user = useSelector((state)=>state.user);
+    const navigate = useNavigate();
 
     const dispatch = useDispatch();
-
     const provider = new GoogleAuthProvider();
 
     const handleMouseEnter = () => {
@@ -49,6 +50,14 @@ const Header = () => {
             });
         });
     };
+
+    const logOut = async ()=>{
+        await firebaseAuth.signOut().then(()=>{
+            dispatch(SET_USER_NULL());
+            navigate("/", {replace:true});
+        })
+    }
+
 
     //Css part
     const HeaderStyle = {
@@ -163,19 +172,23 @@ const Header = () => {
                                 style={HeaderStyle.beforeLogin.Img}
                                 alt=""
                                 referrerPolicy="no-referrer"
+                                onClick={()=>setMenu(!isMenu)}
                             />
-                            <div style={HeaderStyle.userMenu}>
-                                <h2>{user?.displayName}</h2>
+                            {/*User Menu Options*/}
+                            {isMenu && (
+                                <div style={HeaderStyle.userMenu} onMouseLeave={()=>setMenu(false)}>
+                                    <h2>{user?.displayName}</h2>
 
-                                {mainMenu && mainMenu.map(menu=>(
-                                    <NavLink
-                                        to={`/newPost/${menu?.slug}`} key={menu?.id} style={{color:"rgb(249 250 251)"}}>
-                                        {menu?.name}
-                                    </NavLink>
-                                ))}
-                                <div className="w-full h-[1px] bg-grey-700"></div>
-                                <p className="text-xl text-grey-300" onClick={logOut}>Logout</p>
-                            </div>
+                                    {mainMenu && mainMenu.map(menu=>(
+                                        <NavLink
+                                            to={`/newPost/${menu?.slug}`} key={menu?.id} style={{color:"rgb(249 250 251)"}}>
+                                            {menu?.name}
+                                        </NavLink>
+                                    ))}
+                                    <div className="w-full h-[1px]" style={{color: "white"}}></div>
+                                    <p className="text-xl text-grey-300" onClick={logOut}>Logout</p>
+                                </div>
+                            )}
                         </div>
                     </>
                 ):(

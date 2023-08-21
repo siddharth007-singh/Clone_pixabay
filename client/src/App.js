@@ -1,7 +1,7 @@
 import {Route, Routes} from "react-router-dom";
 import {HomeContainer} from "./Containers";
-import {Header} from "./Components";
-import {useEffect} from "react";
+import {Header, MainLoader} from "./Components";
+import {useEffect, useState} from "react";
 import {firebaseAuth} from "./config/firebase.config";
 import {createNewUser} from "./sanity";
 import {useDispatch} from "react-redux";
@@ -10,14 +10,19 @@ import {SET_USER} from "./context/actions/userActions";
 function App() {
 
     const dispatch = useDispatch();
+    const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
+        setIsLoading(true);
         firebaseAuth.onAuthStateChanged(result=>{
             if(result){
                 console.log('User', result?.providerData[0]);
                 createNewUser(result?.providerData[0]).then(()=>{
                     console.log('New User Created');
-                    dispatch(SET_USER(result?.providerData[0]))
+                    dispatch(SET_USER(result?.providerData[0]));
+                    setInterval(()=>{
+                        setIsLoading(false);
+                    }, 2000);
                 });
             }
         });
@@ -26,16 +31,22 @@ function App() {
     return (
         <>
             <div className="w-screen min-h-screen flex flex-col items-center justify-start">
-                {/*Header section*/}
-                <Header/>
-
-                {/*Content scrtion*/}
-                <main className='w-full h-full flex items-center justify-center'>
-                    {/*Routes*/}
-                    <Routes>
-                        <Route path="/" element={<HomeContainer/>}/>
-                    </Routes>
-                </main>
+                {isLoading?(
+                    <>
+                        <MainLoader/>
+                    </>
+                ):(
+                    <>
+                        <Header/>
+                        {/*Content scrtion*/}
+                        <main className='w-full h-full flex items-center justify-center'>
+                            {/*Routes*/}
+                            <Routes>
+                                <Route path="/" element={<HomeContainer/>}/>
+                            </Routes>
+                        </main>
+                    </>
+                )}
             </div>
         </>
     );
