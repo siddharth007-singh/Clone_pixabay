@@ -44,5 +44,6 @@ export const uploadeAsset = async (asset)=>{
             contentType: asset.type,
             filename: asset.name,
         })
+        return  data;
     }
 }
