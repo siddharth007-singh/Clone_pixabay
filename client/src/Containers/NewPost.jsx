@@ -2,7 +2,6 @@ import React from 'react';
 import {Banner2} from "../asset";
 import {subMenu} from '../utils/support';
 import {NavLink} from "react-router-dom";
-import {hover} from "@testing-library/user-event/dist/hover";
 
 const NewPost=()=>{
 
