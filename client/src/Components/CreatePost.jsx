@@ -1,6 +1,12 @@
-import React from "react";
+import React, {useState} from "react";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import "swiper/css/bundle";
+import ".../asset/css/swiperStyle.css";
 
 const CreatePost = ()=>{
+    const [title, seTtitle] = useState("");
 
     const CreatePostStyle={
         MainSection:{
@@ -31,7 +37,13 @@ const CreatePost = ()=>{
         <div style={CreatePostStyle.MainSection}>
             {/*Alert Notificstion*/}
             {/*title*/}
-            <input type="text" placeholder="Your Post Title Here" style={CreatePostStyle.InputStyle}/>
+            <input
+                type="text"
+                placeholder="Your Post Title Here"
+                style={CreatePostStyle.InputStyle}
+                value={title}
+                onChange={(e)=>seTtitle(e.target.value)}
+            />
             {/*category slider*/}
             {/*file uploade*/}
             {/*keyword*/}
