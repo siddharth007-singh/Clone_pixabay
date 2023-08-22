@@ -3,7 +3,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import "swiper/css/bundle";
-import ".../asset/css/swiperStyle.css";
+import {CSS} from "../asset";
+import {categoriesList} from "../utils/support";
 
 const CreatePost = ()=>{
     const [title, seTtitle] = useState("");
@@ -44,7 +45,23 @@ const CreatePost = ()=>{
                 value={title}
                 onChange={(e)=>seTtitle(e.target.value)}
             />
+
             {/*category slider*/}
+            <Swiper
+                grabCursor={true}
+                spaceBetween={10}
+                centeredSlides={false}
+                className="mySwiper"
+                slidesPerView={8}>
+
+                {categoriesList && categoriesList.map(value=>(
+                    <SwiperSlide key={value.id} className="py-4">
+                        <div className={`px-2 py-1 flex items-center justify-center rounded-md border border-grey-300 hover:shadow-md shadow-inner`}>
+                            <p>{value.name}</p>
+                        </div>
+                    </SwiperSlide>
+                ))}
+            </Swiper>
             {/*file uploade*/}
             {/*keyword*/}
             {/*description*/}
