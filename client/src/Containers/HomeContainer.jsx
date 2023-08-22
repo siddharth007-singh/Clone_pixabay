@@ -1,9 +1,6 @@
 import React from 'react';
 import {BannerImage} from "../asset";
 
-// const HomeContainerStyle={
-//
-// }
 
 const HomeContainer = () => {
   return <div className="w-screen h-auto flex flex-col items-center justify-center relative">

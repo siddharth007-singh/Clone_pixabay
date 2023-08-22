@@ -63,35 +63,13 @@ const Header = () => {
     const HeaderStyle = {
         head:{
             position: "fixed",
-            left:"20px",
-            top:"10px",
-            right:"20px",
+            left:"0px",
+            top:"0px",
+            right:"0px",
             display:"flex",
             alignItems: "center",
             justifyContent: "space-between",
             zIndex:50,
-            transitionProperty: "all",
-            transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)",
-            transitionDuration: "300ms",
-        },
-
-        logo:{
-            width: "10rem",
-            height: "auto",
-            objectFit: "contain",
-            padding: "0.5rem",
-        },
-
-        beforeLogin:{
-            position: "relative",
-            cursor: "pointer",
-
-            Img:{
-                borderRadius: "9999px",
-                width: "2.5rem",
-                height: "2.5rem",
-                objectFit: "cover",
-            }
         },
 
         afterLogin:{
@@ -152,24 +130,24 @@ const Header = () => {
     }
 
     return(
-        <header style={HeaderStyle.head} className={`${color?'bg-white': 'bg-transparent'}`}
+        <header style={HeaderStyle.head} className={`inset-x-0 sm:px-12 lg:px-32 xl:px-44 py-4 transition-all duration-300 ${color?'bg-white': 'bg-transparent'}`}
         >
             {/*Logo Section*/}
             <NavLink to={"/"}>
                 <img
                     src={Logo}
                     alt="Main Logo "
-                    style={HeaderStyle.logo}
+                    className="w-24 h-auto object-cover"
                 />
             </NavLink>
             {/*UserProfile Section */}
             <div className="flex items-center justify-center" style={{gap:"1rem"}}>
                 {user?(
                     <>
-                        <div style={HeaderStyle.beforeLogin} >
+                        <div className="relative cursor-pointer">
                             <img
                                 src={user?.photoURL}
-                                style={HeaderStyle.beforeLogin.Img}
+                                className="rounded-full w-10 h-10 object-cover"
                                 alt=""
                                 referrerPolicy="no-referrer"
                                 onClick={()=>setMenu(!isMenu)}
