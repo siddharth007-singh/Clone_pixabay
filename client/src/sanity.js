@@ -29,4 +29,20 @@ export const createNewUser = async (data)=>{
     await clients.createIfNotExists(_doc).then(res=>{
        return res;
     });
+};
+
+export const uploadeAsset = async (asset)=>{
+    let data;
+    if(["image/jpeg", "image/jpg", "image/png", "image/gif"].includes(asset.type)){
+        data = await clients.assets.upload("image", asset, {
+            contentType: asset.type,
+            filename: asset.name,
+        })
+        return data;
+    }else{
+        data = await clients.assets.upload("file", asset, {
+            contentType: asset.type,
+            filename: asset.name,
+        })
+    }
 }
