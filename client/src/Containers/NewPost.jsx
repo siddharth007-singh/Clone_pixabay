@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {Banner2} from "../asset";
 import {subMenu} from '../utils/support';
 import {NavLink, Route, Routes} from "react-router-dom";
-import {CreatePost} from "../Components";
+import {Collections, CreatePost, My_Media} from "../Components";
 
 const NewPost=()=>{
     const [isActive, setIsActive] = useState(false);
@@ -48,6 +48,16 @@ const NewPost=()=>{
                 color:isActive? "rgb(85 85 85)" : "rgb(96 165 250)",
             },
         },
+        ContentStyle:{
+            width:"100%",
+            display:"flex",
+            flexDirection: "column",
+            height:"auto",
+            justifyContent: "flex-start",
+            paddingTop: "1rem",
+            paddingBottom: "1rem",
+        }
+
     }
 
     return (
@@ -70,9 +80,11 @@ const NewPost=()=>{
                         ))}
                     </ul>
                 </div>
-                <div className="w-full flex flex-col items-center justify-start h-auto py-4">
+                <div style={newPostStyle.ContentStyle}>
                     <Routes>
-                        <Route path="/upload" element={CreatePost}/>
+                        <Route path="/upload" element={<CreatePost/>}/>
+                        <Route path="/collections" element={<Collections/>}/>
+                        <Route path="/my-media" element={<My_Media/>}/>
                     </Routes>
                 </div>
             </section>
