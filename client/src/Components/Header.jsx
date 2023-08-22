@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {NavLink, useNavigate} from "react-router-dom";
-import {Logo, Logo1} from "../asset";
+import {Logo} from "../asset";
 import {FcGoogle} from "react-icons/fc";
 import {GoogleAuthProvider, signInWithRedirect} from "firebase/auth";
 import {firebaseAuth} from "../config/firebase.config";

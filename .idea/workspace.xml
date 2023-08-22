@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a4fdcc56-3abf-42e8-b84b-18480af85e91" name="Changes" comment="22Aug Commit1">
+    <list default="true" id="a4fdcc56-3abf-42e8-b84b-18480af85e91" name="Changes" comment="22Aug Commit2">
+      <change afterPath="$PROJECT_DIR$/client/src/Components/CreatePost.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Containers/NewPost.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Containers/NewPost.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +84,7 @@
       <workItem from="1692105352082" duration="6854000" />
       <workItem from="1692512469954" duration="12708000" />
       <workItem from="1692606655638" duration="5965000" />
-      <workItem from="1692628898444" duration="7664000" />
+      <workItem from="1692628898444" duration="10146000" />
     </task>
     <task id="LOCAL-00001" summary="New Commit">
       <option name="closed" value="true" />
@@ -226,7 +230,15 @@
       <option name="project" value="LOCAL" />
       <updated>1692676306339</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="22Aug Commit2">
+      <option name="closed" value="true" />
+      <created>1692676362590</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1692676362590</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -262,6 +274,7 @@
     <MESSAGE value="21Aug Commit3" />
     <MESSAGE value="21Aug Commit4" />
     <MESSAGE value="22Aug Commit1" />
-    <option name="LAST_COMMIT_MESSAGE" value="22Aug Commit1" />
+    <MESSAGE value="22Aug Commit2" />
+    <option name="LAST_COMMIT_MESSAGE" value="22Aug Commit2" />
   </component>
 </project>
