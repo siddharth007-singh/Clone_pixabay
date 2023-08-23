@@ -13,7 +13,7 @@ function App() {
     const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
-        setIsLoading(true);
+        // setIsLoading(true);
         firebaseAuth.onAuthStateChanged(result=>{
             if(result){
                 console.log('User', result?.providerData[0]);

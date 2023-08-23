@@ -8,7 +8,8 @@ import {Spinner} from "../Components";
 import {BiCloudUpload} from 'react-icons/bi';
 import {AiFillCloseCircle, AiOutlineClear} from 'react-icons/ai';
 import {FaTrash} from 'react-icons/fa';
-import {uploadeAsset, deleteUploadeAsset} from "../sanity";
+import {uploadeAsset, deleteUploadeAsset, SavePost} from "../sanity";
+import {useSelector} from "react-redux";
 
 const CreatePost = ()=>{
     const [title, seTtitle] = useState("");
@@ -17,6 +18,8 @@ const CreatePost = ()=>{
     const [keywords, setKeywords] = useState("");
     const [tags, setTags] = useState([]);
     const [description, setDescription] = useState("");
+
+    const user = useSelector(state => state.user);
     
     // File Uploading States
     const [asset, setAsset] = useState(null);
@@ -76,19 +79,80 @@ const CreatePost = ()=>{
     }
 
     const SaveData = async ()=>{
-        if(!title || !asset || !category || tags){
+        if(!title || !asset || !category || !tags){
             setAlert("required Fields are missing");
             setInterval(()=>{
                 setAlert(null);
             }, 2000);
         }
         else{
-            //Cheking whearter the is a=save accorinf to file or iamge
+            // Cheking whearter the is a=save accorinf to file or iamge
             if(asset?.mimeType.split("/")[0]==='image'){
-                console.log(asset?.mimeType.split("/")[0]==='image')
+                const doc = {
+                    _type: "post",
+                    title,
+                    keywords:tags,
+                    desc: description,
+                    filesource:asset?.mimeType.split("/")[0]==="image"?"image":"others",
+                    mainImage:{
+                        _type: "mainImage",
+                        asset:{
+                            _type:"reference",
+                            _ref: asset?._id
+                        }
+                    },
+                    categories: category,
+                    users:{
+                        _type:"reference",
+                        _ref: user?.uid,
+                    }
+                }
+                await SavePost(doc).then(()=>{
+                    seTtitle("");
+                    setCategory(null);
+                    setKeywords("");
+                    setTags([]);
+                    setAsset(null);
+                    setDescription("");
+                    setAlert("Data Saved");
+                    setInterval(()=>{
+                        setAlert(null);
+                    }, 3000);
+                })
             }
             else{
-                console.log(asset?.mimeType.split("/")[0]==='image')
+                const doc = {
+                    _type: "post",
+                    title,
+                    keywords:tags,
+                    desc: description,
+                    filesource:asset?.mimeType.split("/")[0]==="image"?"image":"others",
+                    otherMedia:{
+                        _type: "otherMedia",
+                        asset:{
+                            _type:"reference",
+                            _ref: asset?._id
+                        }
+                    },
+                    categories: category,
+                    users:{
+                        _type:"reference",
+                        _ref: user?.uid,
+                    }
+                }
+
+                await SavePost(doc).then(()=>{
+                    seTtitle("");
+                    setCategory(null);
+                    setKeywords("");
+                    setTags([]);
+                    setAsset(null);
+                    setDescription("");
+                    setAlert("Data Saved");
+                    setInterval(()=>{
+                        setAlert(null);
+                    }, 3000);
+                })
             }
         }
     };

@@ -52,5 +52,11 @@ export const uploadeAsset = async (asset)=>{
 export const deleteUploadeAsset = async (id)=>{
     let data = await clients.delete(id);
     return data;
-}
+};
 
+export const SavePost = async(doc)=>{
+    await clients.create(doc).then((res)=>{
+        console.log("Save Doc : ", res);
+        return res;
+    })
+}
