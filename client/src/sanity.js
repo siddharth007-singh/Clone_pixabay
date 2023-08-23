@@ -39,11 +39,18 @@ export const uploadeAsset = async (asset)=>{
             filename: asset.name,
         })
         return data;
-    }else{
+    }
+    else{
         data = await clients.assets.upload("file", asset, {
             contentType: asset.type,
             filename: asset.name,
         })
         return  data;
     }
+};
+
+export const deleteUploadeAsset = async (id)=>{
+    let data = await clients.delete(id);
+    return data;
 }
+

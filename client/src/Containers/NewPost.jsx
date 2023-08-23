@@ -75,7 +75,7 @@ const NewPost=()=>{
                                 to={menu.slug} key={menu.id}
                                 style={newPostStyle.unorderList.isActiveStyle}
                                 onLoad={handleMouseEnter}
-                                onunload={handleMouseLeave}
+                                // onunload={handleMouseLeave}
                             >{menu.name}</NavLink>
                         ))}
                     </ul>

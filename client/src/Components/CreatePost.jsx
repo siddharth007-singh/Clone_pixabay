@@ -6,12 +6,17 @@ import "swiper/css/bundle";
 import {categoriesList} from "../utils/support";
 import {Spinner} from "../Components";
 import {BiCloudUpload} from 'react-icons/bi';
-import {uploadeAsset} from "../sanity";
+import {AiFillCloseCircle, AiOutlineClear} from 'react-icons/ai';
+import {FaTrash} from 'react-icons/fa';
+import {uploadeAsset, deleteUploadeAsset} from "../sanity";
 
 const CreatePost = ()=>{
     const [title, seTtitle] = useState("");
     const [category, setCategory] = useState("");
     const [isloading, setIsloading] = useState(false);
+    const [keywords, setKeywords] = useState("");
+    const [tags, setTags] = useState([]);
+    const [description, setDescription] = useState("");
     
     // File Uploading States
     const [asset, setAsset] = useState(null);
@@ -21,7 +26,7 @@ const CreatePost = ()=>{
         const file = event.target.files[0];
         if(file && isAllowed(file)){
             await uploadeAsset(file).then(data=>{
-                console.log("Uploaded Asset", data);
+                console.log("Uplode asset", data);
                 setAsset(data);
                 setInterval(()=>{
                     setIsloading(false);
@@ -38,18 +43,55 @@ const CreatePost = ()=>{
         }
     };
 
-    const isAllowed  =(file)=>{
+    const isAllowed =(file)=>{
         const allowedTypes=[
             "audio/mp3",
             "audio/wav",
             "audio/avi",
-            "audio/jpeg",
-            "audio/jpg",
-            "audio/png",
-            "audio/gif",
+            "audio/mp4",
+            "image/jpeg",
+            "image/jpg",
+            "image/png",
+            "image/gif",
         ];
         return allowedTypes.includes(file.type);
     }
+
+    const deleteAsset = async (id)=>{
+        setIsloading(true);
+        await deleteUploadeAsset(id).then(data=>{
+            setAsset(null);
+            setInterval(()=>{
+                setIsloading(false);
+            }, 3000);
+        })
+    };
+
+    const handlekeyUp = (event)=>{
+        if(event.key ==="Enter"){
+            setTags(keywords.split(","));
+            setKeywords("");
+            console.log(tags);
+        }
+    }
+
+    const SaveData = async ()=>{
+        if(!title || !asset || !category || tags){
+            setAlert("required Fields are missing");
+            setInterval(()=>{
+                setAlert(null);
+            }, 2000);
+        }
+        else{
+            //Cheking whearter the is a=save accorinf to file or iamge
+            if(asset?.mimeType.split("/")[0]==='image'){
+                console.log(asset?.mimeType.split("/")[0]==='image')
+            }
+            else{
+                console.log(asset?.mimeType.split("/")[0]==='image')
+            }
+        }
+    };
 
     const CreatePostStyle={
         MainSection:{
@@ -146,10 +188,81 @@ const CreatePost = ()=>{
                             className="h-full w-full object-cover"
                         />
                     )}
+
+                    {asset && ["video/mp4", "video/avi", "video/mov", "video/wav"].includes(asset?.mimeType)&&(
+                        <video
+                            src={asset?.url}
+                            controls
+                            className="h-full w-full object-cover"
+                        />
+                    )}
                 </>}</>}
+
+                {asset &&(
+                    <div className="w-12 h-12 rounded-full flex items-center justify-center bg-red-400 hover:bg-red-600 cursor-pointer
+                    absolute top-5 right-5" onClick={()=>deleteAsset(asset?._id)}>
+                        <FaTrash className="text-base text-white"/>
+                    </div>
+                )}
             </div>
             {/*keyword*/}
+            <div className="w-full flex flex-col gap-4 items-center justify-center">
+                <div className="w-full flex flex-col gap-4 items-center justify-center relative">
+                    <input
+                        type="text"
+                        placeholder="Type your Tags seprated by Commas"
+                        value={keywords}
+                        onChange={(e)=>setKeywords(e.target.value)}
+                        className="w-full px-4 py-3 rounded-md border border-gray-200 shadow-inner text-lg text-primary font-semibold"
+                        onKeyUp={handlekeyUp}
+                    />
+                    <AiOutlineClear
+                        className="absolute text-xl text-primary cursor-pointer hover:text-2xl transition-all duration-150"
+                        style={{right:"20px"}}
+                        onClick={()=>{
+                            setKeywords("");
+                            setTags([]);
+                        }}
+                    />
+                </div>
+                <div>
+                    {tags.length>0 &&(
+                        <div className="h-auto px-4 py-4 flex items-center justify-center  flex-wrap border border-dashed rounded-md border-gray-200 gap-4">
+                            {tags.map((tag, i)=>(
+                                <div key={i} className="flex items-center justify-center gap-2 px-2 py-1 rounded-md border border-gray-200 border-dashed shadow-inner hover:bg-gray-200 cursor-pointer">
+                                    <p>{tag}</p>
+                                    <AiFillCloseCircle
+                                     className="text-lg text-primary  cursor-pointer"
+                                     onClick={()=>{
+                                         setTags(tags.filter((value)=>value!==tag));
+                                     }}
+                                    />
+                                </div>
+                            ))}
+                        </div>
+                    )}
+                </div>
+            </div>
             {/*description*/}
+            <textarea
+                type="text"
+                rows={6}
+                cols={1}
+                placeholder="Description"
+                value={description}
+                onChange={(e)=>setDescription(e.target.value)}
+                className="w-full px-4 py-3 rounded-md border border-gray-200 shadow-inner text-lg text-primary font-semibold"
+            />
+
+            {/*Button*/}
+            <div className="w-full flex items-center">
+                <button
+                    className="px-4 py-2 rounded-md bg-blue-300 text-lg text-primary cursor-pointer hover:bg-blue-600 hover:text-white w-full lg:w-68 ml-auto"
+                    onClick={SaveData}
+                >
+                    Save
+                </button>
+            </div>
         </div>
     );
 }
