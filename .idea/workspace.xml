@@ -5,10 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a4fdcc56-3abf-42e8-b84b-18480af85e91" name="Changes" comment="23Aug Commit2">
-      <change afterPath="$PROJECT_DIR$/client/src/context/actions/feedAction.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/context/reducers/feedReducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/Components/Feeds.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/Components/MasonryLayout.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/context/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/context/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Containers/HomeContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Containers/HomeContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/sanity.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/sanity.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/utils/support.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/utils/support.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clone/schemas/comments.js" beforeDir="false" afterPath="$PROJECT_DIR$/clone/schemas/comments.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +92,8 @@
       <workItem from="1692606655638" duration="5965000" />
       <workItem from="1692628898444" duration="28453000" />
       <workItem from="1692773373427" duration="6786000" />
-      <workItem from="1692804943718" duration="3747000" />
+      <workItem from="1692804943718" duration="4038000" />
+      <workItem from="1692846226796" duration="5165000" />
     </task>
     <task id="LOCAL-00001" summary="New Commit">
       <option name="closed" value="true" />
@@ -311,7 +319,15 @@
       <option name="project" value="LOCAL" />
       <updated>1692807421149</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="23Aug Commit2">
+      <option name="closed" value="true" />
+      <created>1692808762611</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1692808762611</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

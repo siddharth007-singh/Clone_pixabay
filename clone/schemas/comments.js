@@ -14,7 +14,7 @@ export default defineType({
             name: 'users',
             title: 'Users',
             type: 'reference',
-            to:{type: 'users'}
+            to:{type: 'users'   }
         }),
     ],
 })

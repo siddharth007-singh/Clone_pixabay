@@ -40,3 +40,44 @@ export const categoriesList=[
     {id: uuidv4(), name:"4K Wallpapers"},
     {id: uuidv4(), name:"Wallpapers"},
 ]
+
+export const fetchQuery = `
+*[_type=='post'] | order(_createAt desc) {
+  _id,
+  title,
+  keywords,
+  categories,
+  otherMedia{
+    asset->{
+      url
+    }
+  },
+  mainMedia{
+    asset->{
+      url
+    }
+  },
+  desc,
+  _createdAt,
+  users->{
+    _id,
+    displayName,
+    photoURL,
+  },
+  collections[]->{
+     _id,
+    displayName,
+    photoURL,
+  },
+  comments[]->{
+    _id,
+    comment,
+    _createdAt,
+    users->{
+    _id,
+    displayName,
+    photoURL,
+  }
+  }
+}
+`;
