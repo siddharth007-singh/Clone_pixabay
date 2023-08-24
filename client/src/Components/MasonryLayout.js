@@ -1,6 +1,6 @@
 import React from "react";
 import Masonry from "react-masonry-css";
-import {Feeds} from "../Components";
+import {Feed} from "../Components";
 
 
 const BreakPoints = {
@@ -16,10 +16,10 @@ const MasonryLayout = ({feeds})=>{
     return(
         <Masonry className="flex" breakpointCols={BreakPoints}>
             {feeds?.map((feed, i)=>(
-                <Feeds key={i} data={feed}/>
+                <Feed key={i} data={feed}/>
             ))}
         </Masonry>
-    )
-}
+    );
+};
 
 export  default MasonryLayout;

@@ -41,7 +41,7 @@ const HomeContainer = () => {
             </div>
         )};
       </div>
-  );
+  )
 }
 
 export default HomeContainer;

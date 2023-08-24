@@ -5,4 +5,4 @@ export {default as My_Media} from './My_Media';
 export {default as Collections} from './Collections';
 export {default as Spinner} from './Spinner';
 export {default as MasonryLayout} from './MasonryLayout';
-export {default as Feeds} from './Feeds';
+export {default as Feed} from './Feed';

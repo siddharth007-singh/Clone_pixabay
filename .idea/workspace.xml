@@ -4,18 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a4fdcc56-3abf-42e8-b84b-18480af85e91" name="Changes" comment="23Aug Commit2">
-      <change afterPath="$PROJECT_DIR$/client/src/Components/Feeds.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/Components/MasonryLayout.js" afterDir="false" />
+    <list default="true" id="a4fdcc56-3abf-42e8-b84b-18480af85e91" name="Changes" comment="24Aug Commit1">
+      <change afterPath="$PROJECT_DIR$/client/src/Components/Feed.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/Feeds.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/MasonryLayout.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/MasonryLayout.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/Components/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/Containers/HomeContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Containers/HomeContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/sanity.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/sanity.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/utils/support.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/utils/support.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clone/schemas/comments.js" beforeDir="false" afterPath="$PROJECT_DIR$/clone/schemas/comments.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +36,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/client/src/App.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/client/src/Components/Feed.jsx" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/client/src/Components/Header.jsx" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -93,7 +90,8 @@
       <workItem from="1692628898444" duration="28453000" />
       <workItem from="1692773373427" duration="6786000" />
       <workItem from="1692804943718" duration="4038000" />
-      <workItem from="1692846226796" duration="5165000" />
+      <workItem from="1692846226796" duration="5405000" />
+      <workItem from="1692863187777" duration="4981000" />
     </task>
     <task id="LOCAL-00001" summary="New Commit">
       <option name="closed" value="true" />
@@ -327,7 +325,15 @@
       <option name="project" value="LOCAL" />
       <updated>1692808762611</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="24Aug Commit1">
+      <option name="closed" value="true" />
+      <created>1692852291078</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1692852291079</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -346,7 +352,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Commit" />
     <MESSAGE value="Commit2" />
     <MESSAGE value="15Aug Commit" />
     <MESSAGE value="15Aug Commit2" />
@@ -371,6 +376,7 @@
     <MESSAGE value="22Aug Commit8" />
     <MESSAGE value="23Aug Commit1" />
     <MESSAGE value="23Aug Commit2" />
-    <option name="LAST_COMMIT_MESSAGE" value="23Aug Commit2" />
+    <MESSAGE value="24Aug Commit1" />
+    <option name="LAST_COMMIT_MESSAGE" value="24Aug Commit1" />
   </component>
 </project>

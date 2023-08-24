@@ -52,7 +52,7 @@ export const fetchQuery = `
       url
     }
   },
-  mainMedia{
+  mainImage{
     asset->{
       url
     }
