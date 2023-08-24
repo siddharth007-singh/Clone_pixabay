@@ -61,17 +61,6 @@ const Header = () => {
 
     //Css part
     const HeaderStyle = {
-        head:{
-            position: "fixed",
-            left:"0px",
-            top:"0px",
-            right:"0px",
-            display:"flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            zIndex:50,
-        },
-
         afterLogin:{
             display:"flex",
             alignItems:"center",
@@ -130,8 +119,7 @@ const Header = () => {
     }
 
     return(
-        <header style={HeaderStyle.head} className={`inset-x-0 sm:px-12 lg:px-32 xl:px-44 py-4 transition-all duration-300 ${color?'bg-white': 'bg-transparent'}`}
-        >
+        <header className={`fixed flex justify-between items-center inset-x-0 sm:px-12 lg:px-32 xl:px-44 py-4 transition-all duration-300 z-50 ${color?'bg-white': 'bg-transparent'}`}>
             {/*Logo Section*/}
             <NavLink to={"/"}>
                 <img

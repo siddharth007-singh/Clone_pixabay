@@ -29,7 +29,7 @@ const HomeContainer = () => {
   return(
       <div className="w-screen">
         <div className="w-screen h-420 flex items-center justify-center relative object-cover">
-          <img src={BannerImage} className="object-cover" alt="" style={{width:"1920px", height:"440px"}}/>
+          <img src={BannerImage} className="object-cover" alt=""/>
         </div>
         {isLoading ? (
             <div className="w-full p-12 flex items-center justify-center">
