@@ -81,3 +81,46 @@ export const fetchQuery = `
   }
 }
 `;
+
+export const fetchDetailsQuery = (feedId)=>{
+    const query = `
+        *[_type=='post' && _id=='${feedId}'] {
+          _id,
+          title,
+          keywords,
+          categories,
+          otherMedia{
+            asset->{
+              url
+            }
+          },
+          mainImage{
+            asset->{
+              url
+            }
+          },
+          desc,
+          _createdAt,
+          users->{
+            _id,
+            displayName,
+            photoURL,
+          },
+          collections[]->{
+             _id,
+            displayName,
+            photoURL,
+          },
+          comments[]->{
+            _id,
+            comment,
+            _createdAt,
+            users->{
+            _id,
+            displayName,
+            photoURL,
+          }
+          }
+        }`
+    return query;
+}

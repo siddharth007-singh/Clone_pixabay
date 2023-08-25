@@ -1,6 +1,6 @@
 import {Route, Routes} from "react-router-dom";
 import {HomeContainer, NewPost} from "./Containers";
-import {Header, MainLoader} from "./Components";
+import {FeedDetails, Header, MainLoader} from "./Components";
 import {useEffect, useState} from "react";
 import {firebaseAuth} from "./config/firebase.config";
 import {createNewUser} from "./sanity";
@@ -44,6 +44,7 @@ function App() {
                             <Routes>
                                 <Route path="/*" element={<HomeContainer/>}/>
                                 <Route path="/newPost/*" element={<NewPost/>}/>
+                                <Route path="/feed-details/:_id" element={<FeedDetails/>}/>
                             </Routes>
                         </main>
                     </>

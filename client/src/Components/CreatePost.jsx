@@ -86,7 +86,7 @@ const CreatePost = ()=>{
             }, 2000);
         }
         else{
-            // Cheking whearter the is a=save accorinf to file or iamge
+            // Cheking whearter is save according to file or image
             if(asset?.mimeType.split("/")[0]==='image'){
                 const doc = {
                     _type: "post",
@@ -152,7 +152,8 @@ const CreatePost = ()=>{
                     setInterval(()=>{
                         setAlert(null);
                     }, 3000);
-                })
+                });
+                window.location.reload();
             }
         }
     };

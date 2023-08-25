@@ -57,8 +57,8 @@ const Feed = ({data})=>{
                         </div>
                         {data?.keywords && (
                             <div className="absolute inset-x-0 bottom-0 px-3 py-2 flex items-center gap-1 bg-gradient-to-bl form-[rgba(0,0,0,0.2)] to-[rgba(0,0,0,0.8)] backdrop-blur-sm flex-wrap">
-                                {data.keywords.slice(0, 3).map((tag, i)=>(
-                                    <p className="text-sm font-semibold text-gray-50" key={i}>{`${tag.length>10? `${tag.slice(1,10)}...`: tag}`}</p>
+                                {data.keywords.slice(0, 3).map((tags, i)=>(
+                                    <p className="text-sm font-semibold text-gray-50" key={i}>{`${tags.length>10? `${tags.slice(1,10)}...`: tags}`}</p>
                                 ))}
                             </div>
                         )}
