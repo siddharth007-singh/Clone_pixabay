@@ -29,7 +29,7 @@ const Feed = ({data})=>{
         setAlreadySaved(
             !!data?.collections?.filter((item)=>item._id===user?.uid).length
         );
-    }, []);
+    }, [alreadySaved]);
     
     return(
         <div className="m-2 relative cursor-pointer" onMouseEnter={()=>setIshover(true)} onMouseLeave={()=>setIshover(false)}>

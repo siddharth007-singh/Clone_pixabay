@@ -12,9 +12,9 @@ const BreakPoints = {
     500:1,
 }
 
-const MasonryLayout = ({feeds})=>{
+    const MasonryLayout = ({feeds, isSuggestion})=>{
     return(
-        <Masonry className="flex" breakpointCols={BreakPoints}>
+        <Masonry className="flex" breakpointCols={!isSuggestion ?BreakPoints: 2}>
             {feeds?.map((feed, i)=>(
                 <Feed key={i} data={feed}/>
             ))}
