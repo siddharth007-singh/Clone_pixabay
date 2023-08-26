@@ -90,3 +90,30 @@ export const fetchFeedsDetails = async (feedID)=>{
         return data;
     }
 };
+
+export const addToComments = async (id, uid, comment)=>{
+    const doc= {
+        _type:"comments",
+        comment,
+        users:{
+            _type:"reference",
+            _ref: uid,
+        },
+    };
+    await clients.create(doc).then((com)=>{
+        clients
+            .patch(id)
+            .setIfMissing({comments:[]})
+            .insert("after", "comments[-1]", [
+            {
+                _key:uuidv4(),
+                _type:"reference",
+                _ref:com._id,
+            },
+        ])
+            .commit()
+            .then((res)=>{
+                console.log(res);
+            });
+    });
+}

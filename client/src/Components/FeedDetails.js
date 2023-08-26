@@ -18,7 +18,7 @@ const FeedDetails = ()=>{
         fetchFeedsDetails(_id).then((data)=>{
             setFeed(data[0]);
         })
-    }, [_id]);
+    }, [feeds, _id]);
 
     const saveToCollections = async (id, uid)=>{
         if(!alreadySaved){
@@ -30,9 +30,9 @@ const FeedDetails = ()=>{
 
     useEffect(() => {
         setAlreadySaved(
-            !!feed?.collections?.filter((item)=>item._id===user?.uid).length
+            !!feed?.collections?.filter((item)=>item._id===user?.uid)?.length
         );
-    }, [alreadySaved, _id]);
+    }, [alreadySaved]);
     
     return(
         <div className="w-screen h-auto flex flex-col items-center justify-center relative">
@@ -53,12 +53,12 @@ const FeedDetails = ()=>{
                         )}
                     </div>
                     {/*Comment Section*/}
-                    <div className="w-4 py-4 flex flex-col items-start justify-start ">
+                    <div className="w-full py-4 flex flex-col  ">
                         <Comment feed={feed} user={user} setFeed={setFeed}/>
                     </div>
                 </div>
 
-                <div className="flex px-7 flex-col justify-start items-start w-full gap-6">
+                <div className="flex px-7 flex-col justify-start w-full gap-6">
                     {/*user area*/}
                     <div className="flex items-center justify-center gap-3">
                         <img src={feed?.users?.photoURL} alt="" className="w-12 h-12 rounded-full object-cover shadow-md"/>
@@ -118,10 +118,10 @@ const FeedDetails = ()=>{
                         <MasonryLayout
                             isSuggestion={true}
                             feeds={
-                            feed?.otherMedia
-                                ?feeds.slice(0,6).filter(item=>item.otherMedia)
-                                :feeds.slice(0,6).filter(item=>item.mainImage )
-                            }
+                                feed?.otherMedia
+                                    ?feeds?.filter((item)=>item.otherMedia)
+                                    :feeds?.filter((item)=>item.mainImage )
+                             }
                         />
                     </div>
 
@@ -136,8 +136,8 @@ const FeedDetails = ()=>{
                     <MasonryLayout
                         feeds={
                             feed?.otherMedia
-                                ?feeds.filter(item=>item.otherMedia)
-                                :feeds.filter(item=>item.mainImage)
+                                ?feeds?.filter((item)=>item.otherMedia)
+                                :feeds?.filter((item)=>item.mainImage)
                         }
                     />
                 </div>

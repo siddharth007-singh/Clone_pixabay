@@ -1,24 +1,43 @@
 import React, {useState} from "react";
 import {Spinner} from "./index";
 import moment from  "moment";
+import {addToComments, fetchFeeds, fetchFeedsDetails} from "../sanity";
+import {useDispatch} from "react-redux";
+import {SET_FEED} from "../context/actions/feedAction";
 
-const Comment = ()=>{
+const Comment = (feed, user, setFeed)=>{
 
     const [comment, setComment] = useState("");
     const [loading, setIsLoading] = useState(false);
     const [index, setIndex] = useState(5);
 
-    const saveComment = ({feed, user, setFeed})=>{}
+    const dispatch = useDispatch();
+
+    const saveComment = async (event)=>{
+        if(event.key==="Enter"){
+            if(comment){
+                setIsLoading(true);
+                addToComments(feed?._id, user?.uid, comment).then(()=>{
+                    fetchFeedsDetails(feed?._id).then((newData)=>{
+                        setFeed(newData[0])
+                        fetchFeeds().then((data)=>{
+                            dispatch(SET_FEED(data))
+                        })
+                        setInterval(()=>{
+                            setIsLoading(false);
+                        },2000)
+
+                    })
+                })
+            }
+        }
+    }
     
     return(
         <div className="w-full flex flex-col items-start justify-start gap-2">
             <p className="text-lg text-primary font-semibold">Comemnt</p>
             <div className="w-full flex gap-3 items-center justify-center">
-                <img
-                    src={}
-                    alt=""
-                    className="w-16 h-16 rounded-full object-cover shadow-md"
-                />
+
                 <input
                     value={comment}
                     onChange={(e)=>setComment(e.target.value)}
@@ -30,24 +49,40 @@ const Comment = ()=>{
             </div>
 
             <div className="w-full flex flex-col items-center justify-center gap-2">
-                {loading ? <Spinner/> : <>
-                    {feed?.comments? (feed?.comments.slice(0, index).map(msg=>(
-                        <div key={msg._id} className="w-full flex gap-3 items-start justify-start">
-                            <img
-                                src={msg?.users?.photoURL}
-                                alt=""
-                                className="w-16 h-16 rounded-full object-cover shadow-md"
-                            />
-                            <div className="flex w-full flex-col items-start justify-start gap-2">
-                                <div className="flex w-full items-center justify-between">
-                                    <p className="text-lg text-primary font-semibold">{msg?.users?.displayName}</p>
-                                    <p>{moment(`${new Date(msg?._createdAt).toLocaleDateString()} ${new Date(msg?._createdAt).toLocaleTimeString()}`, "DD/MM/YYY h:mm:ss A").fromNow()}</p>
+                {loading ? (
+                    <Spinner/>
+                ):(
+                    <>
+                        {feed?.comments? (
+                            feed?.comments?.slice(0,index).map((msg)=>(
+                                <div key={msg._id} className="w-full flex gap-3 items-start justify-start">
+                                    <img
+                                        src={msg?.users?.photoURL}
+                                        alt=""
+                                        className="w-16 h-16 rounded-full object-cover shadow-md"
+                                    />
+                                    <div className="flex w-full flex-col items-start justify-start gap-2">
+                                        <div className="flex w-full items-center justify-between">
+                                            <p className="text-lg text-primary font-semibold">{msg?.users?.displayName}</p>
+                                            <p>
+                                                {moment(
+                                                    `${new Date(msg?._createdAt
+                                                    ).toLocaleDateString()} ${new Date(
+                                                        msg?._createdAt
+                                                    ).toLocaleTimeString()}`,
+                                                    "DD/MM/YYY h:mm:ss A"
+                                                ).fromNow()}
+                                            </p>
+                                        </div>
+                                        <p className="text-base text-primary">{msg?.comment}</p>
+                                    </div>
                                 </div>
-                                <p className="text-base text-primary">{msg?.comments}</p>
-                            </div>
-                        </div>
-                    ))):<><p>No Comments</p></>}
-                </>}
+                            ))
+                            ):(
+                                <><p>No Comments</p></>
+                            )}
+                    </>
+                )}
             </div>
         </div>
     )

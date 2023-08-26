@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a4fdcc56-3abf-42e8-b84b-18480af85e91" name="Changes" comment="25Aug Commit3">
-      <change afterPath="$PROJECT_DIR$/client/src/Components/Comment.js" afterDir="false" />
+    <list default="true" id="a4fdcc56-3abf-42e8-b84b-18480af85e91" name="Changes" comment="26Aug Commit3">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/Comment.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Comment.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/Components/FeedDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/FeedDetails.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/sanity.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/sanity.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +91,7 @@
       <workItem from="1692863187777" duration="5330000" />
       <workItem from="1692886892652" duration="5303000" />
       <workItem from="1692962074432" duration="1000" />
-      <workItem from="1692963714222" duration="20911000" />
+      <workItem from="1692963714222" duration="27368000" />
     </task>
     <task id="LOCAL-00001" summary="New Commit">
       <option name="closed" value="true" />
@@ -375,7 +373,15 @@
       <option name="project" value="LOCAL" />
       <updated>1692977738590</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="26Aug Commit3">
+      <option name="closed" value="true" />
+      <created>1693063313492</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1693063313492</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -394,7 +400,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="16Aug Commit" />
     <MESSAGE value="20Aug Commit1" />
     <MESSAGE value="20Aug Commit2" />
     <MESSAGE value="20Aug Commit3" />
@@ -419,6 +424,7 @@
     <MESSAGE value="25Aug Commit1" />
     <MESSAGE value="25Aug Commit2" />
     <MESSAGE value="25Aug Commit3" />
-    <option name="LAST_COMMIT_MESSAGE" value="25Aug Commit3" />
+    <MESSAGE value="26Aug Commit3" />
+    <option name="LAST_COMMIT_MESSAGE" value="26Aug Commit3" />
   </component>
 </project>
