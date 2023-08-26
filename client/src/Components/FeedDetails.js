@@ -5,7 +5,7 @@ import {addToCollection, fetchFeedsDetails} from "../sanity";
 import {FaHeart} from "react-icons/fa";
 import {useSelector} from "react-redux";
 import {MdBookmarks} from "react-icons/md";
-import {MasonryLayout} from "./index";
+import {Comment, MasonryLayout} from "./index";
 
 const FeedDetails = ()=>{
     const [alreadySaved, setAlreadySaved] = useState(null);
@@ -18,7 +18,7 @@ const FeedDetails = ()=>{
         fetchFeedsDetails(_id).then((data)=>{
             setFeed(data[0]);
         })
-    }, []);
+    }, [_id]);
 
     const saveToCollections = async (id, uid)=>{
         if(!alreadySaved){
@@ -52,15 +52,18 @@ const FeedDetails = ()=>{
                             <video src={feed.otherMedia.asset.url} loop autoPlay muted className="object-cover"/>
                         )}
                     </div>
+                    {/*Comment Section*/}
+                    <div className="w-4 py-4 flex flex-col items-start justify-start ">
+                        <Comment feed={feed} user={user} setFeed={setFeed}/>
+                    </div>
                 </div>
-                <div className="flex px-7 flex-col justify-start w-full gap-6">
 
+                <div className="flex px-7 flex-col justify-start items-start w-full gap-6">
                     {/*user area*/}
                     <div className="flex items-center justify-center gap-3">
                         <img src={feed?.users?.photoURL} alt="" className="w-12 h-12 rounded-full object-cover shadow-md"/>
                         <p className="text-lg text-primary font-semibold">{feed?.users?.displayName}</p>
                     </div>
-
                     {/*Collections area*/}
                     <div className="flex items-center justify-center gap-2">
                         <div className="flex items-center justify-center gap-2 px-2 py-1 rounded-md border border-red-200">
@@ -121,6 +124,22 @@ const FeedDetails = ()=>{
                             }
                         />
                     </div>
+
+                </div>
+            </div>
+
+            {/* Related Post */}
+            <div className="w-full px-12 xl:px-32 flex flex-col items-start justify-start">
+                <p className="text-lg font-semibold text-primary">related Post : </p>
+
+                <div className="w-full items-center justify-center flex-wrap gap-3">
+                    <MasonryLayout
+                        feeds={
+                            feed?.otherMedia
+                                ?feeds.filter(item=>item.otherMedia)
+                                :feeds.filter(item=>item.mainImage)
+                        }
+                    />
                 </div>
             </div>
         </div>
