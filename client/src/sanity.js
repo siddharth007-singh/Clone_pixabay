@@ -91,29 +91,24 @@ export const fetchFeedsDetails = async (feedID)=>{
     }
 };
 
-export const addToComments = async (id, uid, comment)=>{
-    const doc= {
-        _type:"comments",
+
+export const addToComments  = async (id, uid, comment)=>{
+    const _doc = {
+        _type: "comments",
         comment,
         users:{
             _type:"reference",
-            _ref: uid,
+            _Ref: uid,
         },
     };
-    await clients.create(doc).then((com)=>{
-        clients
-            .patch(id)
-            .setIfMissing({comments:[]})
-            .insert("after", "comments[-1]", [
-            {
-                _key:uuidv4(),
-                _type:"reference",
-                _ref:com._id,
-            },
-        ])
-            .commit()
-            .then((res)=>{
-                console.log(res);
-            });
-    });
+
+    await clients.create(_doc).then((com)=>{
+        clients.patch(id).setIfMissing({comments:[]}).insert("after", "comments[-1]", [{
+            _key:uuidv4(),
+            _type:"reference",
+            _ref:com._id
+
+        }
+        ]).commit().then((res)=>console.log("NewComments : ", res));
+    })
 }

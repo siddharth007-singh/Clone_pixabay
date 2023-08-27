@@ -17,11 +17,12 @@ const Comment = (feed, user, setFeed)=>{
         if(event.key==="Enter"){
             if(comment){
                 setIsLoading(true);
+                setComment("");
                 addToComments(feed?._id, user?.uid, comment).then(()=>{
                     fetchFeedsDetails(feed?._id).then((newData)=>{
-                        setFeed(newData[0])
+                        setFeed(newData[0]);
                         fetchFeeds().then((data)=>{
-                            dispatch(SET_FEED(data))
+                            dispatch(SET_FEED(data));
                         })
                         setInterval(()=>{
                             setIsLoading(false);
@@ -38,6 +39,12 @@ const Comment = (feed, user, setFeed)=>{
             <p className="text-lg text-primary font-semibold">Comemnt</p>
             <div className="w-full flex gap-3 items-center justify-center">
 
+                <img
+                    src="https://cdn.pixabay.com/photo/2017/10/04/07/43/autumn-2815427_960_720.jpg"
+                    className="w-16 h-16 rounded-full object-cover shadow-md"
+                    alt=""
+                />
+
                 <input
                     value={comment}
                     onChange={(e)=>setComment(e.target.value)}
@@ -53,6 +60,7 @@ const Comment = (feed, user, setFeed)=>{
                     <Spinner/>
                 ):(
                     <>
+
                         {feed?.comments? (
                             feed?.comments?.slice(0,index).map((msg)=>(
                                 <div key={msg._id} className="w-full flex gap-3 items-start justify-start">
@@ -80,7 +88,7 @@ const Comment = (feed, user, setFeed)=>{
                             ))
                             ):(
                                 <><p>No Comments</p></>
-                            )}
+                        )}
                     </>
                 )}
             </div>

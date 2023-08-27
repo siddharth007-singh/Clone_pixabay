@@ -18,7 +18,13 @@ const FeedDetails = ()=>{
         fetchFeedsDetails(_id).then((data)=>{
             setFeed(data[0]);
         })
-    }, [feeds, _id]);
+    }, [_id]);
+
+    useEffect(() => {
+        setAlreadySaved(
+            !!feed?.collections?.filter((item)=>item._id===user?.uid)?.length
+        );
+    }, [alreadySaved]);
 
     const saveToCollections = async (id, uid)=>{
         if(!alreadySaved){
@@ -27,12 +33,6 @@ const FeedDetails = ()=>{
             });
         }
     };
-
-    useEffect(() => {
-        setAlreadySaved(
-            !!feed?.collections?.filter((item)=>item._id===user?.uid)?.length
-        );
-    }, [alreadySaved]);
     
     return(
         <div className="w-screen h-auto flex flex-col items-center justify-center relative">
@@ -58,7 +58,7 @@ const FeedDetails = ()=>{
                     </div>
                 </div>
 
-                <div className="flex px-7 flex-col justify-start w-full gap-6">
+                <div className="flex px-7 flex-col items-start justify-start w-full gap-6">
                     {/*user area*/}
                     <div className="flex items-center justify-center gap-3">
                         <img src={feed?.users?.photoURL} alt="" className="w-12 h-12 rounded-full object-cover shadow-md"/>
@@ -119,8 +119,8 @@ const FeedDetails = ()=>{
                             isSuggestion={true}
                             feeds={
                                 feed?.otherMedia
-                                    ?feeds?.filter((item)=>item.otherMedia)
-                                    :feeds?.filter((item)=>item.mainImage )
+                                    ?feeds?.slice(0,6).filter((item)=>item.otherMedia)
+                                    :feeds?.slice(0,6).filter((item)=>item.mainImage)
                              }
                         />
                     </div>
@@ -129,7 +129,7 @@ const FeedDetails = ()=>{
             </div>
 
             {/* Related Post */}
-            <div className="w-full px-12 xl:px-32 flex flex-col items-start justify-start">
+                <div className="w-full px-12 xl:px-32 flex flex-col items-start justify-start">
                 <p className="text-lg font-semibold text-primary">related Post : </p>
 
                 <div className="w-full items-center justify-center flex-wrap gap-3">
