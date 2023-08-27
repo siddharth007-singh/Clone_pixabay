@@ -11,16 +11,17 @@ const SearchContainer = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [searchFeed, setSearchFeed] = useState(null);
 
-    useEffect(() => {
+    useEffect(()=>{
         setIsLoading(true);
         fetchSearchQuery(searchTerm).then((data)=>{
             console.log(data);
             setSearchFeed(data);
+
             setInterval(()=>{
                 setIsLoading(false);
-            }, 2000);
-        });
-    }, [searchTerm]);
+            },2000)
+        })
+    },[searchTerm]);
     
 
     return(
@@ -30,6 +31,12 @@ const SearchContainer = () => {
             </div>
 
             <Filter/>
+
+            <section className='w-screen flex-wrap items-center justify-between gap-3'>
+                {isLoading ?(
+                    <div></div>
+                ):()}
+            </section>
         </div>
     )
 }
