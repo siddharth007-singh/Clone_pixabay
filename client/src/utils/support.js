@@ -1,4 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
+import {FaCamera, FaFire, FaHome, FaPaintBrush, FaVideo} from "react-icons/fa";
 export const subMenu=[
     {id: uuidv4(), name:"Media", slug:"my-media"},
     {id: uuidv4(), name:"Upload", slug:"upload"},
@@ -83,8 +84,7 @@ export const fetchQuery = `
 `;
 
 export const fetchDetailsQuery = (feedId)=>{
-    const query = `
-        *[_type=='post' && _id=='${feedId}'] {
+    const querys = `*[_type=='post' && _id=='${feedId}'] {
           _id,
           title,
           keywords,
@@ -121,6 +121,15 @@ export const fetchDetailsQuery = (feedId)=>{
             photoURL,
           }
           }
-        }`
-    return query;
-}
+        }`;
+    return querys;
+};
+
+
+export const filterMenu=[
+    {id:uuidv4(), to:"/", label:"Home", icon:FaHome},
+    {id:uuidv4(), to:"/search/photos", label:"Photos", icon:FaCamera},
+    {id:uuidv4(), to:"/search/illustration", label:"Illustrations", icon:FaPaintBrush},
+    {id:uuidv4(), to:"/search/videos", label:"Videos", icon:FaVideo},
+    {id:uuidv4(), to:"/search/gifs", label:"Gifs", icon:FaFire},
+]
