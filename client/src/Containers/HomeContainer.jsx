@@ -3,7 +3,7 @@ import {BannerImage} from "../asset";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchFeeds} from "../sanity";
 import {SET_FEED} from "../context/actions/feedAction";
-import {MasonryLayout, Spinner} from "../Components";
+import {Banner, Filter, MasonryLayout, Spinner} from "../Components";
 
 
 const HomeContainer = () => {
@@ -28,9 +28,10 @@ const HomeContainer = () => {
 
   return(
       <div className="w-screen">
-        <div className="w-screen h-420 flex items-center justify-center relative object-cover">
-          <img src={BannerImage} className="object-cover" alt=""/>
-        </div>
+        <Banner/>
+
+        <Filter/>
+
         {isLoading ? (
             <div className="w-full p-12 flex items-center justify-center">
               <Spinner/>

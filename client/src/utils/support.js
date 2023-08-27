@@ -58,6 +58,7 @@ export const fetchQuery = `
       url
     }
   },
+  keywords,
   desc,
   _createdAt,
   users->{
@@ -99,6 +100,7 @@ export const fetchDetailsQuery = (feedId)=>{
               url
             }
           },
+          keywords,
           desc,
           _createdAt,
           users->{
@@ -133,3 +135,48 @@ export const filterMenu=[
     {id:uuidv4(), to:"/search/videos", label:"Videos", icon:FaVideo},
     {id:uuidv4(), to:"/search/gifs", label:"Gifs", icon:FaFire},
 ]
+
+export const searchQuery = (searchTerm) =>{
+    const query = `*[_type == 'post' && title match '${searchTerm}*
+    || categories match '${searchTerm}*
+    || keywords match '${searchTerm}*']{
+      _id,
+      title,
+      keywords,
+      categories,
+      otherMedia{
+        asset->{
+          url
+        }
+      },
+      mainImage{
+        asset->{
+          url
+        }
+      },
+      keywords,
+      desc,
+      _createdAt,
+      users->{
+        _id,
+        displayName,
+        photoURL,
+      },
+      collections[]->{
+         _id,
+        displayName,
+        photoURL,
+      },
+      comments[]->{
+        _id,
+        comment,
+        _createdAt,
+        users->{
+        _id,
+        displayName,
+        photoURL,
+      }
+      }
+    }`;
+    return query;
+}

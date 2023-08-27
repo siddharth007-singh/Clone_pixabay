@@ -1,6 +1,6 @@
 import {createClient} from "@sanity/client";
 import imageUrlBuilder from "@sanity/image-url";
-import {fetchDetailsQuery, fetchQuery} from "./utils/support";
+import {fetchDetailsQuery, fetchQuery, searchQuery} from "./utils/support";
 import {v4 as uuidv4} from "uuid";
 
 const clients = createClient({
@@ -111,4 +111,12 @@ export const addToComments  = async (id, uid, comment)=>{
         }
         ]).commit().then((res)=>console.log("NewComments : ", res));
     })
+}
+
+export const fetchSearchQuery = async (searchTerm)=>{
+    let query = searchQuery(searchTerm);
+    if(query){
+        let data = await clients.fetch(query);
+        return data;
+    }
 }

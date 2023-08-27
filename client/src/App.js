@@ -1,5 +1,5 @@
 import {Route, Routes} from "react-router-dom";
-import {HomeContainer, NewPost} from "./Containers";
+import {HomeContainer, NewPost, SearchContainer} from "./Containers";
 import {FeedDetails, Header, MainLoader} from "./Components";
 import {useEffect, useState} from "react";
 import {firebaseAuth} from "./config/firebase.config";
@@ -45,6 +45,7 @@ function App() {
                                 <Route path="/*" element={<HomeContainer/>}/>
                                 <Route path="/newPost/*" element={<NewPost/>}/>
                                 <Route path="/feed-details/:_id" element={<FeedDetails/>}/>
+                                <Route path="/search/:searchTerm" element={<SearchContainer/>}/>
                             </Routes>
                         </main>
                     </>

@@ -5,7 +5,7 @@ import {addToCollection, fetchFeedsDetails} from "../sanity";
 import {FaHeart} from "react-icons/fa";
 import {useSelector} from "react-redux";
 import {MdBookmarks} from "react-icons/md";
-import {Comment, MasonryLayout} from "./index";
+import {Comment, Filter, MasonryLayout} from "./index";
 
 const FeedDetails = ()=>{
     const [alreadySaved, setAlreadySaved] = useState(null);
@@ -40,6 +40,8 @@ const FeedDetails = ()=>{
                 <img src={BannerImage} alt="" className="object-cover" />
                 <div className="inset-0 bg-overlay-4"></div>
             </div>
+
+            <Filter/>
 
             <div className="w-full grid grid-cols-1 lg:grid-cols-2 px-8 lg:px-10 xl:px-32 py-3">
                 <div className="flex flex-col items-start justify-start">
