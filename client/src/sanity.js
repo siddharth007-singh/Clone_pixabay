@@ -84,34 +84,40 @@ export const addToCollection = async (id, uid)=>{
 };
 
 export const fetchFeedsDetails = async (feedID)=>{
-    let querys = fetchDetailsQuery(feedID);
-    if(querys) {
-        let data = await clients.fetch(querys);
+    let query = fetchDetailsQuery(feedID);
+    if(query) {
+        let data = await clients.fetch(query);
         return data;
     }
 };
 
 
-export const addToComments  = async (id, uid, comment)=>{
-    const _doc = {
-        _type: "comments",
-        comment,
-        users:{
-            _type:"reference",
-            _Ref: uid,
-        },
+export const addToComments = async (id, uid, comment) => {
+    const doc = {
+      _type: "comments",
+      comment,
+      users: {
+        _type: "reference",
+        _ref: uid,
+      },
     };
-
-    await clients.create(_doc).then((com)=>{
-        clients.patch(id).setIfMissing({comments:[]}).insert("after", "comments[-1]", [{
-            _key:uuidv4(),
-            _type:"reference",
-            _ref:com._id
-
-        }
-        ]).commit().then((res)=>console.log("NewComments : ", res));
-    })
-}
+    await clients.create(doc).then((com) => {
+      clients
+        .patch(id)
+        .setIfMissing({ comments: [] })
+        .insert("after", "comments[-1]", [
+          {
+            _key: uuidv4(),
+            _type: "reference",
+            _ref: com._id,
+          },
+        ])
+        .commit()
+        .then((res) => {
+          console.log(res);
+        });
+    });
+  };
 
 export const fetchSearchQuery = async (searchTerm)=>{
     let query = searchQuery(searchTerm);
