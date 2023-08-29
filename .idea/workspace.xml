@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a4fdcc56-3abf-42e8-b84b-18480af85e91" name="Changes" comment="2Aug Commit1">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/Collections.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Collections.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/Comment.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Comment.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/FeedDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/FeedDetails.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/My_Media.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/My_Media.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Containers/NewPost.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Containers/NewPost.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/sanity.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/sanity.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/utils/support.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/utils/support.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clone/schemas/comments.js" beforeDir="false" afterPath="$PROJECT_DIR$/clone/schemas/comments.js" afterDir="false" />
-    </list>
+    <list default="true" id="a4fdcc56-3abf-42e8-b84b-18480af85e91" name="Changes" comment="29Aug Final Commit" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -99,7 +89,7 @@
       <workItem from="1692963714222" duration="35203000" />
       <workItem from="1693136683588" duration="6703000" />
       <workItem from="1693246355950" duration="450000" />
-      <workItem from="1693311675126" duration="6607000" />
+      <workItem from="1693311675126" duration="6907000" />
     </task>
     <task id="LOCAL-00001" summary="New Commit">
       <option name="closed" value="true" />
@@ -437,7 +427,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693311708032</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="29Aug Final Commit">
+      <option name="closed" value="true" />
+      <created>1693322868083</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1693322868083</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -456,7 +454,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="21Aug Commit2" />
     <MESSAGE value="21Aug Commit3" />
     <MESSAGE value="21Aug Commit4" />
     <MESSAGE value="22Aug Commit1" />
@@ -481,6 +478,7 @@
     <MESSAGE value="27Aug Commit3" />
     <MESSAGE value="28Aug Commit1" />
     <MESSAGE value="2Aug Commit1" />
-    <option name="LAST_COMMIT_MESSAGE" value="2Aug Commit1" />
+    <MESSAGE value="29Aug Final Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="29Aug Final Commit" />
   </component>
 </project>
