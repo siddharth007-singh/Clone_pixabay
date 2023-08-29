@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a4fdcc56-3abf-42e8-b84b-18480af85e91" name="Changes" comment="27Aug Commit3" />
+    <list default="true" id="a4fdcc56-3abf-42e8-b84b-18480af85e91" name="Changes" comment="28Aug Commit1">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -88,6 +90,7 @@
       <workItem from="1692962074432" duration="1000" />
       <workItem from="1692963714222" duration="35203000" />
       <workItem from="1693136683588" duration="6703000" />
+      <workItem from="1693246355950" duration="450000" />
     </task>
     <task id="LOCAL-00001" summary="New Commit">
       <option name="closed" value="true" />
@@ -409,7 +412,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693143678407</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="28Aug Commit1">
+      <option name="closed" value="true" />
+      <created>1693246626471</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1693246626471</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -428,7 +439,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="20Aug Commit4" />
     <MESSAGE value="21Aug Commit1" />
     <MESSAGE value="21Aug Commit2" />
     <MESSAGE value="21Aug Commit3" />
@@ -453,6 +463,7 @@
     <MESSAGE value="27Aug Commit1" />
     <MESSAGE value="27Aug Commit2" />
     <MESSAGE value="27Aug Commit3" />
-    <option name="LAST_COMMIT_MESSAGE" value="27Aug Commit3" />
+    <MESSAGE value="28Aug Commit1" />
+    <option name="LAST_COMMIT_MESSAGE" value="28Aug Commit1" />
   </component>
 </project>

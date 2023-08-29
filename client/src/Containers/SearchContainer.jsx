@@ -56,9 +56,6 @@ const SearchContainer = () => {
           </>
         )}
       </section>
-
-
-            <div>Its just for puloading the page into the github </div>
         </div>
     )
 }
