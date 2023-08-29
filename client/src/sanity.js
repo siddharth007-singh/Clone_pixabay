@@ -83,9 +83,10 @@ export const addToCollection = async (id, uid)=>{
         .commit();
 };
 
-export const fetchFeedsDetails = async (feedID)=>{
+
+export const fetchFeedsDetails = async (feedID) => {
     let query = fetchDetailsQuery(feedID);
-    if(query) {
+    if (query) {
         let data = await clients.fetch(query);
         return data;
     }

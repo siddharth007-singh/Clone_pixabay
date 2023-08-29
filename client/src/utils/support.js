@@ -12,7 +12,6 @@ export const subMenu=[
 export const mainMenu=[
     {id: uuidv4(), name:"My media", slug:"my-media"},
     {id: uuidv4(), name:"Upload", slug:"upload"},
-    {id: uuidv4(), name:"Upload", slug:"upload"},
     {id: uuidv4(), name:"Statistics", slug:"statistics"},
     {id: uuidv4(), name:"Collections", slug:"collections"},
     {id: uuidv4(), name:"Profile", slug:"profile"},
@@ -58,7 +57,6 @@ export const fetchQuery = `
       url
     }
   },
-  keywords,
   desc,
   _createdAt,
   users->{
@@ -85,7 +83,7 @@ export const fetchQuery = `
 `;
 
 export const fetchDetailsQuery = (feedId) => {
-  const query = `*[_type == 'post' && _id == '${feedId}']   {
+  const query = `*[_type == 'post' && _id == '${feedId}']{
     _id,
     title,
     keywords,
@@ -100,7 +98,7 @@ export const fetchDetailsQuery = (feedId) => {
         url
       }
     },
-    description,
+    desc,
     _createdAt,
     users -> {
       _id,

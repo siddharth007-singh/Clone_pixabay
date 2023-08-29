@@ -17,7 +17,7 @@ const FeedDetails = ()=>{
     useEffect(() => {
         fetchFeedsDetails(_id).then((data)=>{
             setFeed(data[0]);
-        })
+        });
     }, [_id]);
 
     useEffect(() => {

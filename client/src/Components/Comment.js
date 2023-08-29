@@ -5,7 +5,7 @@ import {addToComments, fetchFeeds, fetchFeedsDetails} from "../sanity";
 import {useDispatch} from "react-redux";
 import {SET_FEED} from "../context/actions/feedAction";
 
-const Comment = (feed, user, setFeed)=>{
+const Comment = ({feed, user, setFeed})=>{
 
     const [comment, setComment] = useState("");
     const [loading, setIsLoading] = useState(false);
@@ -63,7 +63,7 @@ const Comment = (feed, user, setFeed)=>{
 
                         {feed?.comments? (
                             feed?.comments?.slice(0,index).map((msg)=>(
-                                <div key={msg._id} className="w-full flex gap-3 items-start justify-start">
+                                <div key={msg._id} className="w-full flex gap-3 items-start justify-start py-2">
                                     <img
                                         src={msg?.users?.photoURL}
                                         alt=""
@@ -74,11 +74,12 @@ const Comment = (feed, user, setFeed)=>{
                                             <p className="text-lg text-primary font-semibold">{msg?.users?.displayName}</p>
                                             <p>
                                                 {moment(
-                                                    `${new Date(msg?._createdAt
+                                                    `${new Date(
+                                                        msg?._createdAt
                                                     ).toLocaleDateString()} ${new Date(
                                                         msg?._createdAt
                                                     ).toLocaleTimeString()}`,
-                                                    "DD/MM/YYY h:mm:ss A"
+                                                    "DD/MM/YYYY h:mm:ss A"
                                                 ).fromNow()}
                                             </p>
                                         </div>
@@ -93,7 +94,7 @@ const Comment = (feed, user, setFeed)=>{
                 )}
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default Comment;
